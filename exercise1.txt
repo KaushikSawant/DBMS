@@ -1,0 +1,142 @@
+Q1-
+create table SEMP
+(
+EMPNO CHAR(4),
+EMPNAME CHAR(20),
+BASIC FLOAT(9,2),
+DEPTNO CHAR(2),
+DEPTHEAD CHAR(4)
+);
+
+Q2-
+create table SDEPT
+(
+DEPTNO CHAR(2),
+DEPTNAME CHAR(15)
+);
+
+Q3-
+insert into SDEPT(DEPTNO, DEPTNAME)
+values('10', 'Development');
+
+insert into SDEPT(DEPTNO, DEPTNAME)
+values('20', 'Training');
+
+Q4-
+insert into SEMP(EMPNO, EMPNAME, BASIC, DEPTNO, DEPTHEAD)
+values('0001', 'SUNIL', 6000, '10', 'NULL');
+
+insert into SEMP(EMPNO, EMPNAME, BASIC, DEPTNO, DEPTHEAD)
+values('0002', 'HIREN', 8000,'20','NULL');
+
+insert into SEMP(EMPNO, EMPNAME, BASIC, DEPTNO, DEPTHEAD)
+values('0003', 'ALI', 4000,'10','0001');
+
+insert into SEMP(EMPNO, EMPNAME,BASIC, DEPTHEAD)
+values('0004','GEORGE',6000, '0002');
+
+create table SUPPLIER
+(
+`S#` varchar(10),
+Sname varchar(10),
+Status int(2),
+City varchar(10)
+);
+
+create table PARTS
+(
+`P#` varchar(20),
+Pname varchar(10),
+Color varchar(10),
+Weight int(4),
+City varchar(10)
+);
+
+create table PROJECTS
+(
+`J#` varchar(10),
+Jname varchar(20),
+City varchar(10)
+);
+
+create table SUPPLIER_PARTS_PROJECT
+(
+`S#` varchar(10),
+`P#` varchar(10),
+`J#` varchar(10),
+Qty int(2)
+);
+
+insert into SUPPLIER(`S#`,Sname,Status,City)
+values('S1','Asian',10,'Paris');
+
+insert into SUPPLIER(`S#`,Sname,Status,City)
+values('S2','Nerolac',20,'London');
+
+insert into SUPPLIER(`S#`,Sname,Status,City)
+values('S3','Delux',30,'Athens');
+
+insert into SUPPLIER(`S#`,Sname,Status,City)
+values('S4','Ultra',40,'Madrid');
+
+
+insert into PARTS(`P#`,Pname,Color,Weight,City)
+values('P1','Engine','Black',12,'Paris'),
+('P2','Screws','Silver',13,'London'),
+('P3','Holder','Red',14,'Athens'),
+('P4','Battery','White',15,'Paris');
+
+insert into PROJECTS(`J#`,Jname,City)
+values('J1','Jason','Paris'),
+('J2','David','Madrid'),
+('J3','Bob','Athens'),
+('J4','Alice','London');
+
+Q5-
+SELECT * FROM SUPPLIER;
+
+Q6-
+SELECT `S#`, SNAME
+FROM SUPPLIER; 
+
+Q7-
+SELECT PNAME, COLOR
+FROM PARTS
+WHERE CITY="LONDON";
+
+Q8-
+SELECT Sname
+FROM SUPPLIER
+WHERE city='LONDON';
+
+Q9-
+SELECT Sname
+FROM SUPPLIER
+WHERE city='paris' or city = 'Athens';
+
+Q10-
+SELECT * from PROJECTS
+WHERE city='Athens';
+
+Q11-
+SELECT Pname 
+FROM Parts
+WHERE Weight >= 12 and Weight <= 14;
+
+Q12-
+SELECT Sname
+from supplier
+WHERE Status >= 20;
+
+Q13-
+SELECT * FROM SUPPLIER 
+where city != 'london';
+
+Q14-
+SELECT City 
+FROM Supplier;
+
+Q15-
+SELECT weight as "Grams",weight/1000 as "MILLIGRAMS", weight*1000 as"KILOGRAMS"
+FROM parts;
+

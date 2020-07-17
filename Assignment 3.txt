@@ -1,0 +1,14 @@
+Assignment –3
+Overview of SQL.
+
+1) Does ANSI recognize the data type DATE?
+ANS- Yes, and the format is YYYY-MM-DD.
+	
+2) Which subdivision of SQL is used to insert values in tables?
+ANS- 1st Method:-
+     INSERT into customers(id, name, city, age)
+     VALUES(46, 'BOB', 'Vashi', 40);
+
+     2nd Method:-	
+     INSERT into customers VALUES(46, 'BOB', 'Vashi', 40);			
+	 			
