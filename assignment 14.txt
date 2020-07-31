@@ -12,4 +12,4 @@ ANS- delete from orders where cnum in(select cnum from customers where cname='Cl
 ANS- update customers set rating = rating+100;
 
 4) Salesperson Serres has left the company. Assign her customers to Motika.
-ANS- update customers set snum=(select snum from salespeople where sname='serres') where snum =(select snum from salespeople where sname='Motika');
+ANS- update customers set snum=(select snum from salespeople where sname='Motika') where snum =(select snum from salespeople where sname='Serres');
